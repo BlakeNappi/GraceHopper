@@ -39,6 +39,9 @@ public class GrassHopper
         
     }
     
+    /**
+     * This method checks for the intersection between the Grace object and the grassHopper object
+     **/
     public boolean isHit(Rectangle2D.Double Grace){
 		if (Grace != null && poly.intersects(Grace))){
 			return true;
