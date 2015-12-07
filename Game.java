@@ -16,13 +16,16 @@ public class Game extends Frame implements MouseListener, KeyListener {
 
 	private Grace Grace;
 	private Abutton newGameButton, endGameButton;
+	private int score = 0;
 		
 	public Game(){
 		
 		Grace = new Grace();
 		
 	}//Game
-
+	private void getScore (int n){
+		score = score + grassHoppers[n].getScore();
+	}
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
