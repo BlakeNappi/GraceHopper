@@ -16,7 +16,7 @@ public class Game extends Frame implements MouseListener, KeyListener {
 
 	private Grace Grace;
 	private Abutton [] Buttons;
-	private int fuckyou;	
+		
 	public Game(){
 		
 		Grace = new Grace();
