@@ -15,7 +15,7 @@ import java.awt.event.MouseListener;
 public class Game extends Frame implements MouseListener, KeyListener {
 
 	private Grace Grace;
-	private Abutton [] Buttons;
+	private Abutton newGameButton, endGameButton;
 		
 	public Game(){
 		
@@ -44,7 +44,16 @@ public class Game extends Frame implements MouseListener, KeyListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
+		int x = event.getX();
+		int y = event.getY();
 		
+		if(newGameButton.isInside(x,y){
+		score = 0;// resets the score
+		repaint();//repaint the frame
+		}
+		else if (endGameButton.isInside(x,y){	
+			System.exit(0);
+			
 	}
 
 	@Override
@@ -62,12 +71,37 @@ public class Game extends Frame implements MouseListener, KeyListener {
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
+		int x = event.getX();
+		int y = event.getY();
 		
+		if (newGameButton.isInside(x,y)){
+			newGameButton.flip();
+		}
+		
+		else if(endGameButton.isInside(x,y){
+			endGamebutton.flip();
+		}
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
+		
+		int x = event.getX();
+		int y = event.getY();
+		JFrame frame = new JFrame("");
+		
+		if(newGameButton.isInside((x,y)){
+			newGameButton.flip();
+			score = 0;
+			repaint();
+		}
+		
+		else if (endGameButton.isInside(x,y))){
+			endGameButton.flip();
+			repaint();
+			
+		}
 		
 	}
 	
