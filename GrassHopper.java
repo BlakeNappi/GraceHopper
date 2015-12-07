@@ -38,4 +38,11 @@ public class GrassHopper
     {
         
     }
+    
+    public boolean isHit(Rectangle2D.Double bulletShape){
+		if (Grace != null && poly.intersects(Grace))){
+			return true;
+		}
+		return false;
+	}
 } // End GrassHopper 
