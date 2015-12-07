@@ -17,12 +17,30 @@ public class Game extends Frame implements MouseListener, KeyListener {
 	private Grace Grace;
 	private Abutton newGameButton, endGameButton;
 	private int score = 0;
+	private Grasshopper[] Grasshopper;
 		
 	public Game(){
 		
 		Grace = new Grace();
 		
 	}//Game
+	
+	/**
+	*  This method checks the collison between the grasshoppers and Grace.
+	**/
+	private void grasshopperDown()
+	{
+		for (int row = 0; row < Grasshopper.length; row++)
+		{
+			if (Grasshopper[row].isHit(Grace) == true)
+			{
+				temp = row;
+				Grasshopper[row] = null;
+			}
+		}
+	}
+	//end grasshopperDown()
+	
 	private void getScore (int n){
 		score = score + grassHoppers[n].getScore();
 	}
