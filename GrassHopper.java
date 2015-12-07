@@ -2,7 +2,7 @@ import java.util.awt*;
 
 public class GrassHopper 
 {
-    private GrassHopper grasshopper = new GrassHopper(); // The class instance of a grasshopper
+    private GrassHopper grasshopper = new GrassHopper(); // The class instances of a grasshopper
     
     public int movement; // The movement for the grasshoppers
     
@@ -19,7 +19,7 @@ public class GrassHopper
      * each grasshopper
      * and set up a limit for them to stop moving
      **/
-    Public Grasshopper()
+    public Grasshopper()
     {
       this.hops = 2;
       this.hopLim = 3;
@@ -39,13 +39,8 @@ public class GrassHopper
         
     }
     
-    /**
-     * This method checks for the intersection between the Grace object and the grassHopper object
-     **/
-    public boolean isHit(Rectangle2D.Double Grace){
-		if (Grace != null && poly.intersects(Grace))){
-			return true;
-		}
-		return false;
-	}
+    public int getPoints() 
+    {
+        return points; // Return the points from the grasshoppers
+    }
 } // End GrassHopper 
