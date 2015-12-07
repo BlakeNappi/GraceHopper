@@ -39,7 +39,7 @@ public class GrassHopper
         
     }
     
-    public boolean isHit(Rectangle2D.Double bulletShape){
+    public boolean isHit(Rectangle2D.Double Grace){
 		if (Grace != null && poly.intersects(Grace))){
 			return true;
 		}
