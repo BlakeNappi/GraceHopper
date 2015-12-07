@@ -30,6 +30,8 @@ public class Game extends Frame implements MouseListener, KeyListener {
 	**/
 	private void grasshopperDown()
 	{
+		int temp;
+		
 		for (int row = 0; row < Grasshopper.length; row++)
 		{
 			if (Grasshopper[row].isHit(Grace) == true)
