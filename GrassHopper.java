@@ -1,7 +1,7 @@
 import java.util.awt*;
 
-public class GrassHopper 
-{
+public class GrassHopper {
+   
     private GrassHopper grasshopper = new GrassHopper(); // The class instances of a grasshopper
     
     public int movement; // The movement for the grasshoppers
@@ -19,14 +19,13 @@ public class GrassHopper
      * each grasshopper
      * and set up a limit for them to stop moving
      **/
-    public Grasshopper()
-    {
+    public Grasshopper(){
       this.hops = 2;
       this.hopLim = 3;
     }
     
-    public int randomHopMovement() 
-    {
+    public int randomHopMovement() {
+       
         
     }
     
@@ -34,13 +33,12 @@ public class GrassHopper
      * The points for the grasshoppers will be
      * set up within this method
      **/ 
-    public int hopperPoints() 
-    {
+    public int hopperPoints() {
         
     }
     
-    public int getPoints() 
-    {
+    public int getPoints() {
+    
         return points; // Return the points from the grasshoppers
     }
 } // End GrassHopper 
