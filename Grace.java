@@ -23,6 +23,14 @@ public class Grace {
 	public void jump() {
 		jump = false;
 	}
+	public void moving(){
+		while(true) {
+			if(moveLeft && !moveRight) 
+				x-=speedH;
+			if(moveLeft = false && moveRight = true)
+				x+=speedH;
+		}
+	}
 	
 	public void setHorizontalSpeed(double sH ){
 		
