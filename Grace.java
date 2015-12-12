@@ -1,7 +1,8 @@
+import java.awt.image.BufferedImage;
 
 public class Grace {
 	
-	private double x,y;
+	private double x,y; //
 	
 	private int  width, height;
 	
