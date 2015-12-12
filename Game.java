@@ -6,6 +6,7 @@
  */
 
 import java.awt.Frame;
+import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -17,7 +18,7 @@ public class Game extends Frame implements MouseListener, KeyListener {
 	private Grace Grace;
 	private Abutton newGameButton, endGameButton;
 	private int score;
-	private Grasshopper[] grasshoppers;
+	private GrassHopper[] grasshoppers;
 	private Terrain[] terrain;
 	private boolean playing;
 	
@@ -25,8 +26,8 @@ public class Game extends Frame implements MouseListener, KeyListener {
 		
 		Grace = new Grace();
 		
-		Grasshopper = new Grasshopper[25];
-		Terrain = new Terrain[100];
+		grasshoppers = new GrassHopper[25];
+		terrain = new Terrain[100];
 		
 		score = 0;
 		playing = true;
@@ -39,11 +40,11 @@ public class Game extends Frame implements MouseListener, KeyListener {
 	private void grasshopperDown(){
 		int temp;
 		
-		for (int row = 0; row < Grasshopper.length; row++){
+		for (int row = 0; row < grasshoppers.length; row++){
 			
-			if (Grasshopper[row].isHit(Grace) == true){
+			if (grasshoppers[row].isHit(Grace) == true){
 				temp = row;
-				Grasshopper[row] = null;
+				grasshoppers[row] = null;
 			}
 		}
 	}
@@ -52,21 +53,21 @@ public class Game extends Frame implements MouseListener, KeyListener {
 	//paints everything
 	public void paint(Graphics Pane){
 		
-		for(int i = 0; i < Grasshopper[].len; i++){
-			if(Grasshopper[i] != null){
-				Grasshopper[i].paint(pane);	//painting grasshoppers
+		for(int i = 0; i < grasshoppers.length; i++){
+			if(grasshoppers[i] != null){
+				grasshoppers[i].paint(Pane);	//painting grasshoppers
 			}
 		}
 		
-		Grace.paint(pane);
+		Grace.paint(Pane);
 		
-		endGameButton.paint(pane);
-		newGameButton.paint(pane);
+		endGameButton.paint(Pane);
+		newGameButton.paint(Pane);
 		
 	}//paint
 	
 	private void getScore (int n){
-		score = score + grassHoppers[n].getScore();
+		score = score + grasshoppers[n].getScore();
 	}
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -101,8 +102,8 @@ public class Game extends Frame implements MouseListener, KeyListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		int x = event.getX();
-		int y = event.getY();
+		int x = e.getX();
+		int y = e.getY();
 		
 		if(newGameButton.isInside(x,y){
 		score = 0;// resets the score
@@ -110,7 +111,7 @@ public class Game extends Frame implements MouseListener, KeyListener {
 		}
 		else if (endGameButton.isInside(x,y){	
 			System.exit(0);
-			
+		
 	}
 
 	@Override
@@ -128,15 +129,15 @@ public class Game extends Frame implements MouseListener, KeyListener {
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		int x = event.getX();
-		int y = event.getY();
+		int x = e.getX();
+		int y = e.getY();
 		
 		if (newGameButton.isInside(x,y)){
 			newGameButton.flip();
 		}
 		
 		else if(endGameButton.isInside(x,y){
-			endGamebutton.flip();
+			endGameButton.flip();
 		}
 	}
 
@@ -144,8 +145,8 @@ public class Game extends Frame implements MouseListener, KeyListener {
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
-		int x = event.getX();
-		int y = event.getY();
+		int x = e.getX();
+		int y = e.getY();
 		JFrame frame = new JFrame("");
 		
 		if(newGameButton.isInside((x,y)){
@@ -161,5 +162,7 @@ public class Game extends Frame implements MouseListener, KeyListener {
 		}
 		
 	}
-	
+	public void main(String[] args) {
+		
+	}
 }//end Game
