@@ -17,8 +17,8 @@ public class Game extends Frame implements MouseListener, KeyListener {
 	private Grace Grace;
 	private Abutton newGameButton, endGameButton;
 	private int score;
-	private Grasshopper[] Grasshopper;
-	private Terrain[] Terrain;
+	private Grasshopper[] grasshoppers;
+	private Terrain[] terrain;
 	private boolean playing;
 	
 	public Game(){
@@ -94,7 +94,7 @@ public class Game extends Frame implements MouseListener, KeyListener {
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getKeyChar() == KeyEvent.VK_SPACE && !Grace.getJump()){
-			Grace.jump();
+			Grace.jump(terrain);
 		}
 	}
 
