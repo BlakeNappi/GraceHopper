@@ -19,7 +19,8 @@ public class Game extends Frame implements MouseListener, KeyListener {
 	private int score;
 	private Grasshopper[] Grasshopper;
 	private Terrain[] Terrain;
-		
+	private boolean playing;
+	
 	public Game(){
 		
 		Grace = new Grace();
@@ -28,6 +29,7 @@ public class Game extends Frame implements MouseListener, KeyListener {
 		Terrain = new Terrain[100];
 		
 		score = 0;
+		playing = true;
 		
 	}//Game
 	
@@ -67,19 +69,30 @@ public class Game extends Frame implements MouseListener, KeyListener {
 		score = score + grassHoppers[n].getScore();
 	}
 	@Override
-	public void keyPressed(KeyEvent arg0) {
+	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
+		if(playing){
+			if(e.getKeyChar() == 'd' || e.getKeyChar() == 'D'){
+				Grace.moveRight();
+			}
+			if(e.getKeyChar() == 'a' || e.getKeyChar() == 'A'){
+				Grace.moveLeft();
+			}
+		}
 	}
 
 	@Override
-	public void keyReleased(KeyEvent arg0) {
+	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
+		if(e.getKeyChar() == 'd' || e.getKeyChar() == 'D')
+			Grace.stopRight();
+		if(e.getKeyChar() == 'a' || e.getKeyChar() == 'A')
+			Grace.stopLeft();
+		if(e.getKeyChar() == 
 	}
 
 	@Override
-	public void keyTyped(KeyEvent arg0) {
+	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
