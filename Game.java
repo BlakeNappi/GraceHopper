@@ -88,13 +88,14 @@ public class Game extends Frame implements MouseListener, KeyListener {
 			Grace.stopRight();
 		if(e.getKeyChar() == 'a' || e.getKeyChar() == 'A')
 			Grace.stopLeft();
-		if(e.getKeyChar() == 
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
+		if(e.getKeyChar() == KeyEvent.VK_SPACE && !Grace.getJump()){
+			Grace.jump();
+		}
 	}
 
 	@Override
