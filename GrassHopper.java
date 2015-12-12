@@ -2,17 +2,18 @@ import java.util.awt*;
 
 public class GrassHopper {
    
-    private GrassHopper grasshopper = new GrassHopper(); // The class instances of a grasshopper
+    protected int movement; // The movement for the grasshoppers
     
-    public int movement; // The movement for the grasshoppers
+    protected int x, y; // X and Y coordinates for grasshopper positions
     
-    public int x, y; // X and Y coordinates for grasshopper positions
+    protected int points; //
     
-    public int points; //
+    protected int hops, //the current number of hops the grasshopper has done
+               hopLim, //the limit of hops
+               hopUp,   //distance the hops go up
+               hopHor; // The distance the hops go horizontally
     
-    public int hops, hopLim, hopD; // The hops each grasshopper will have 
-                                            // and their limits
-    
+    protected boolean hopRight; //direction the grasshopper moves
     
     /**
      * This method will set up the movements for
@@ -22,23 +23,22 @@ public class GrassHopper {
     public Grasshopper(){
       this.hops = 2;
       this.hopLim = 3;
-    }
+    }//Grasshopper
     
     public int randomHopMovement() {
-       
-        
+      
+    if(hops == hopLim){
+       hopRight = flase;
+    }else if(hops == 0){
+       hopRight = true;
     }
-    
-    /**
-     * The points for the grasshoppers will be
-     * set up within this method
-     **/ 
-    public int hopperPoints() {
-        
-    }
+      
+    }//randomHopMovement
     
     public int getPoints() {
     
         return points; // Return the points from the grasshoppers
-    }
+       
+    }//getPoints
+    
 } // End GrassHopper 
