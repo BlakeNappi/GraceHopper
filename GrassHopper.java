@@ -6,7 +6,7 @@ public class GrassHopper {
     
     protected int x, y; // X and Y coordinates for grasshopper positions
     
-    protected int points; //
+    protected int score; //
     
     protected int hops, //the current number of hops the grasshopper has done
                hopLim, //the limit of hops
@@ -19,25 +19,26 @@ public class GrassHopper {
      * This method will set up the movements for
      * each grasshopper
      * and set up a limit for them to stop moving
+     * @return 
      **/
-    public Grasshopper(){
+    public void Grasshopper(){
       this.hops = 2;
       this.hopLim = 3;
     }//Grasshopper
     
-    public int randomHopMovement() {
+    public void randomHopMovement() {
       
     if(hops == hopLim){
-       hopRight = flase;
+       hopRight = false;
     }else if(hops == 0){
        hopRight = true;
     }
       
     }//randomHopMovement
     
-    public int getPoints() {
+    public int getScore() {
     
-        return points; // Return the points from the grasshoppers
+        return score; // Return the points from the grasshoppers
        
     }//getPoints
     
