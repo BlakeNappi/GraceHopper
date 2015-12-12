@@ -27,7 +27,7 @@ public class Grace {
 		while(true) {
 			if(moveLeft && !moveRight) 
 				x-=speedH;
-			if(moveLeft = false && moveRight = true)
+			if(!moveLeft && moveRight)
 				x+=speedH;
 		}
 	}
