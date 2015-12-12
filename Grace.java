@@ -12,6 +12,8 @@ public class Grace {
 	
 	private boolean moveLeft, moveRight, jumping = false; // Booleans for Grace's movements
 	
+	private Terrain[] t;
+	
 	public void moveLeft(){
 		moveLeft = true;
 	}// moveRLeft
@@ -20,7 +22,8 @@ public class Grace {
 		moveRight = false;
 	}// moveRight
 	
-	public void jump() {
+	public void jump(Terrain[] t) {
+		terrain = t;
 		jumping = true;
 		jumpMotion();
 	}// jump
@@ -34,11 +37,26 @@ public class Grace {
 			}
 			else if(counter == 5){
 				y-=speedV;
-			}else{
+			}
+			else if(collide()){
 				jumping = false;
 			}
 		}	
 	}// jumpMotion
+	
+	private boolean collide(){
+		for(int i = 0; terrain[i]; i++){
+			if (terrain[i] != null){
+				int tX = terrain[i].getX();
+				int tW = terrain[i].getWidth();
+				int tY = terrain[i].getY();
+				if(tX < (x + width) && (tX + tW) > X && tY == (y + height)){
+					return true;
+				}
+			}
+		}
+		return false;
+	}//collide
 	
 	public boolean getJump(){
 		return jumping;
